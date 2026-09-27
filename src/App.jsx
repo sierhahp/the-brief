@@ -3,14 +3,15 @@ import { editions } from "./editions";
 import StoryCard from "./components/StoryCard";
 import Scramble from "./components/Scramble";
 import Quiz from "./components/Quiz";
-import HighlightsPanel from "./components/HighlightsPanel";
+import NotesPanel from "./components/NotesPanel";
+import NoteModal from "./components/NoteModal";
 
 const THEME_KEY = "bdb-theme";
-const hlKey = (n) => `bdb-highlights-issue-${n}`;
+const noteKey = (n) => `tbb-notes-issue-${n}`;
 
-function loadHighlights(n) {
+function loadNotes(n) {
   try {
-    return JSON.parse(localStorage.getItem(hlKey(n))) || {};
+    return JSON.parse(localStorage.getItem(noteKey(n))) || {};
   } catch {
     return {};
   }
@@ -19,9 +20,14 @@ function loadHighlights(n) {
 export default function App() {
   const [issueNumber, setIssueNumber] = useState(editions[0].issueNumber);
   const [theme, setTheme] = useState(() => localStorage.getItem(THEME_KEY) || "light");
-  const [highlights, setHighlights] = useState(() => loadHighlights(editions[0].issueNumber));
+  const [notes, setNotes] = useState(() => loadNotes(editions[0].issueNumber));
+  const [noteStoryId, setNoteStoryId] = useState(null);
 
   const edition = editions.find((e) => e.issueNumber === issueNumber) || editions[0];
+
+  useEffect(() => {
+    document.title = `The Brief — Issue #${edition.issueNumber}`;
+  }, [edition.issueNumber]);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -29,20 +35,32 @@ export default function App() {
   }, [theme]);
 
   useEffect(() => {
-    setHighlights(loadHighlights(edition.issueNumber));
+    setNotes(loadNotes(edition.issueNumber));
+    setNoteStoryId(null);
   }, [edition.issueNumber]);
 
   useEffect(() => {
-    localStorage.setItem(hlKey(edition.issueNumber), JSON.stringify(highlights));
-  }, [highlights, edition.issueNumber]);
+    localStorage.setItem(noteKey(edition.issueNumber), JSON.stringify(notes));
+  }, [notes, edition.issueNumber]);
 
-  const onHighlight = (id, kind) => {
-    setHighlights((prev) => {
+  const saveNote = (id, text) => {
+    const trimmed = text.trim();
+    setNotes((prev) => {
       const next = { ...prev };
-      if (kind) next[id] = kind;
+      if (trimmed) next[id] = trimmed;
       else delete next[id];
       return next;
     });
+    setNoteStoryId(null);
+  };
+
+  const deleteNote = (id) => {
+    setNotes((prev) => {
+      const next = { ...prev };
+      delete next[id];
+      return next;
+    });
+    setNoteStoryId(null);
   };
 
   const allStories =
@@ -89,7 +107,7 @@ export default function App() {
             <div className="section-label sans">Quiz day</div>
             <h2 className="section-title">Test yourself</h2>
             <p className="quiz-intro">{edition.intro}</p>
-            <Quiz questions={edition.quizQuestions} issueId={edition.id} />
+            <Quiz key={edition.id} questions={edition.quizQuestions} issueId={edition.id} />
           </section>
         </main>
       ) : (
@@ -98,7 +116,7 @@ export default function App() {
             <div className="section-label sans">Signals</div>
             <h2 className="section-title">AI, moving fast</h2>
             {edition.ai.map((s) => (
-              <StoryCard key={s.id} story={s} highlight={highlights[s.id]} onHighlight={onHighlight} />
+              <StoryCard key={s.id} story={s} note={notes[s.id]} onOpenNote={() => setNoteStoryId(s.id)} />
             ))}
           </section>
 
@@ -106,7 +124,7 @@ export default function App() {
             <div className="section-label sans">Signals</div>
             <h2 className="section-title">The world, in motion</h2>
             {edition.world.map((s) => (
-              <StoryCard key={s.id} story={s} highlight={highlights[s.id]} onHighlight={onHighlight} />
+              <StoryCard key={s.id} story={s} note={notes[s.id]} onOpenNote={() => setNoteStoryId(s.id)} />
             ))}
           </section>
 
@@ -152,28 +170,10 @@ export default function App() {
             </div>
           </section>
 
-          {edition.words && edition.words.length > 0 && (
-            <section className="section">
-              <div className="section-label sans">Before you play</div>
-              <h2 className="section-title">Words in this issue</h2>
-              <p className="words-bridge-note sans">
-                Meet each word in context now — you’ll unscramble them in the game below.
-              </p>
-              <div className="words-bridge">
-                {edition.words.map((w) => (
-                  <div className="word-row" key={w.id}>
-                    <div className="word-term sans">{w.word}</div>
-                    <div className="word-def">“{w.definition}”</div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
           <section className="section">
             <div className="section-label sans">Play</div>
             <h2 className="section-title">Vocabulary scramble</h2>
-            <Scramble words={edition.words} issueId={edition.id} />
+            <Scramble key={edition.id} words={edition.words} issueId={edition.id} />
           </section>
         </main>
       )}
@@ -184,12 +184,26 @@ export default function App() {
       </footer>
 
       {edition.kind === "regular" && (
-        <HighlightsPanel
-          highlights={highlights}
+        <NotesPanel
+          notes={notes}
           stories={allStories}
-          onClear={() => setHighlights({})}
+          issueNumber={edition.issueNumber}
+          onClear={() => setNotes({})}
         />
       )}
+
+      {noteStoryId && (() => {
+        const story = allStories.find((s) => s.id === noteStoryId);
+        return story ? (
+          <NoteModal
+            story={story}
+            initialText={notes[noteStoryId] || ""}
+            onSave={(text) => saveNote(noteStoryId, text)}
+            onDelete={() => deleteNote(noteStoryId)}
+            onClose={() => setNoteStoryId(null)}
+          />
+        ) : null;
+      })()}
     </div>
   );
 }

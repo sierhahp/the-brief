@@ -2,6 +2,7 @@
 // Corrected September 26, 2026: claims verified against primary sources;
 // three details fixed (see corrections note in-app).
 export const issue1 = {
+  id: "issue-1",
   issueNumber: 1,
   dateline: "Monday · September 21, 2026",
   kind: "regular",

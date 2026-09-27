@@ -1,5 +1,6 @@
 // Issue #2 — Wednesday, September 23, 2026 (regular)
 export const issue2 = {
+  id: "issue-2",
   issueNumber: 2,
   dateline: "Wednesday · September 23, 2026",
   kind: "regular",
@@ -49,7 +50,7 @@ export const issue2 = {
       id: "world-unga",
       kicker: "01 / Diplomacy",
       title: "37 minutes at the UN",
-      body: "President Trump used his 37-minute UN General Assembly address to warn he could ‘annihilate’ Iran without a peace deal — then predicted one would come after the November 3 US midterms. He declared the US government would stop saying ‘artificial intelligence’ and use ‘super intelligence’ instead, calling AI safety warnings a hoax and rejecting a ‘globalist scheme’ to control AI. He also called Cuba a failed state that ‘will fall’ (its delegation walked out), urged countries to quit the International Criminal Court, and claimed Ukraine’s war ‘will get that one done.’",
+      body: "President Trump used his 37-minute UN General Assembly address to warn he could ‘annihilate’ Iran without a peace deal — then predicted one would come after the November 3 US midterms. He declared the US government would stop saying ‘artificial intelligence’ and use ‘super intelligence’ instead, calling AI safety warnings a hoax and rejecting a ‘globalist scheme’ to control AI. He also called Cuba a failed state that ‘will fall’ (its delegation walked out) — an island living under a US trade embargo for more than six decades — urged countries to quit the International Criminal Court, and claimed Ukraine’s war ‘will get that one done.’",
       why: "The speech set the calendar: everything Iran-related now runs through November 3.",
       prediction: "‘Superintelligence’ quietly enters federal documents within months — while every lab keeps calling it AI.",
       confidence: "high",
@@ -58,7 +59,7 @@ export const issue2 = {
       id: "world-iran-talks",
       kicker: "02 / Energy",
       title: "The $100 line",
-      body: "The US and Iran held their first shuttle talks in months on the UN sidelines — Foreign Minister Abbas Araqchi and envoys Steve Witkoff and Jared Kushner communicating through Qatari mediators. Trump called the three-hour session ‘very productive’; Iran conveyed its conditions for reopening the Strait of Hormuz, including lifting the US naval blockade and releasing frozen assets. On the same day, Saudi Arabia restarted its East-West pipeline to the Red Sea, and Brent crude fell below $100 a barrel for the first time since September 8.",
+      body: "The US and Iran held their first shuttle talks in months on the UN sidelines — Foreign Minister Abbas Araqchi and envoys Steve Witkoff and Jared Kushner communicating through Qatari mediators. Trump called the three-hour session ‘very productive’; Iran conveyed its conditions for reopening the Strait of Hormuz, including lifting the US naval blockade and releasing frozen assets. On the same day, Saudi Arabia restarted its East-West pipeline to the Red Sea — resilience in infrastructure form — and Brent crude fell below $100 a barrel for the first time since September 8.",
       why: "Oil is pricing diplomacy now, not just barrels.",
       prediction: "Brent holds under $100 while talks continue — one failed round puts the war premium back in a day.",
       confidence: "high",
@@ -98,7 +99,7 @@ export const issue2 = {
   ],
   financialMoves: [
     { id: "finance-concept", label: "One concept", body: "‘Risk-on’: when investors decide the future looks bright, money floods into risky assets — stocks, crypto, chips. Tuesday was textbook risk-on: a record Nasdaq and $86K bitcoin on the same day." },
-    { id: "finance-week", label: "This week", body: "The September Fed hike (3.75–4%) is digested and the 10-year Treasury has slipped back below 5%, with one more hike roughly priced for December. If you carry variable-rate debt or park cash in a low-yield account, the next 90 days are your window to act before December reprices everything." },
+    { id: "finance-week", label: "This week", body: "The September Fed hike (3.75–4%) is digested and the 10-year Treasury — the benchmark rate for mortgages, corporate debt, and half the financial system — has slipped back below 5%, with one more hike roughly priced for December. If you carry variable-rate debt or park cash in a low-yield account, the next 90 days are your window to act before December reprices everything." },
   ],
   words: [
     { id: "w1", word: "OVERSIGHT", scramble: "SOVERIGHT", definition: "Watchful supervision; also, a failure to notice." },

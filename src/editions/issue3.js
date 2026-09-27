@@ -1,6 +1,7 @@
 // Issue #3 — Friday, September 25, 2026 (quiz)
 // Covers Issues #1 and #2. Answers are graded client-side with immediate feedback.
 export const issue3 = {
+  id: "issue-3",
   issueNumber: 3,
   dateline: "Friday · September 25, 2026",
   kind: "quiz",

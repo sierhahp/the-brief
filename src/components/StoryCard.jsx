@@ -1,7 +1,4 @@
-export default function StoryCard({ story, highlight, onHighlight }) {
-  const set = (kind) =>
-    onHighlight(story.id, highlight === kind ? null : kind);
-
+export default function StoryCard({ story, note, onOpenNote }) {
   return (
     <article className="story" id={story.id}>
       <div className="kicker sans">{story.kicker}</div>
@@ -21,18 +18,12 @@ export default function StoryCard({ story, highlight, onHighlight }) {
           {story.prediction}
         </div>
       )}
-      <div className="hl-row sans">
+      <div className="note-row sans">
         <button
-          className={`hl-btn ${highlight === "explain" ? "active-explain" : ""}`}
-          onClick={() => set("explain")}
+          className={`note-btn ${note ? "has-note" : ""}`}
+          onClick={onOpenNote}
         >
-          {highlight === "explain" ? "✓ " : ""}Explain this
-        </button>
-        <button
-          className={`hl-btn ${highlight === "interesting" ? "active-interesting" : ""}`}
-          onClick={() => set("interesting")}
-        >
-          {highlight === "interesting" ? "✓ " : ""}Interesting
+          {note ? "📝 My note" : "📝 Add a note"}
         </button>
       </div>
     </article>

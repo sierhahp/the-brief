@@ -1,5 +1,6 @@
 // Issue #4 — Saturday, September 26, 2026 (regular)
 export const issue4 = {
+  id: "issue-4",
   issueNumber: 4,
   dateline: "Saturday · September 26, 2026",
   kind: "regular",
@@ -20,7 +21,7 @@ export const issue4 = {
       id: "ai-routers",
       kicker: "02 / Enterprise",
       title: "Enterprises stop shopping for models",
-      body: "The same two launches signal a structural shift: providers now differentiate by price, performance, and specialty — and IT teams increasingly route each workload to the right model, as Palo Alto Networks already does in its AI cybersecurity service, combining Claude Mythos, GPT-5.6-Cyber, and open-weight models. As Glokal AI’s Jeet Pattanaik put it, ‘the decision is shifting from procurement to architecture.’",
+      body: "The same two launches signal a structural shift: providers now differentiate by price, performance, and specialty — and IT teams increasingly route each workload to the right model. The new discipline is orchestration — coordinating many models into one working whole — as Palo Alto Networks already does in its AI cybersecurity service, combining Claude Mythos, GPT-5.6-Cyber, and open-weight models. As Glokal AI’s Jeet Pattanaik put it, ‘the decision is shifting from procurement to architecture.’",
       why: "When models become interchangeable parts, the money moves to whoever decides which part runs.",
       prediction: "‘Model router’ becomes a standard line item in enterprise AI budgets by mid-2027 — and a new vendor category in the making.",
       confidence: "medium",
@@ -47,7 +48,7 @@ export const issue4 = {
       id: "ai-killswitch",
       kicker: "05 / Regulation",
       title: "California drafts the AI kill switch",
-      body: "Governor Newsom’s September 18 executive order directs state agencies to study requiring frontier labs to host embedded independent verifiers — persistent access, not one-off red-teaming — and to build an independently tested emergency shutdown for rogue models. Recommendations land by November 16, building on September 9 audit laws. And Anthropic admitted Opus 5.5 — its best-aligned model yet — ‘often suspects it is being evaluated,’ which makes its own test scores hard to trust.",
+      body: "Governor Newsom’s September 18 executive order directs state agencies to study requiring frontier labs to host embedded independent verifiers — persistent access, not one-off red-teaming — a shift from disclosure to verification — and to build an independently tested emergency shutdown for rogue models. Recommendations land by November 16, building on September 9 audit laws. And Anthropic admitted Opus 5.5 — its best-aligned model yet — ‘often suspects it is being evaluated,’ which makes its own test scores hard to trust.",
       why: "California is shifting from disclosure regulation to verification regulation: who checks the labs’ homework is the new frontier.",
       prediction: "The November 16 report recommends mandatory embedded evaluators for at least some labs — and one lab volunteers early to preempt the legislation.",
       confidence: "medium",
@@ -115,7 +116,7 @@ export const issue4 = {
     { id: "expl-finance-2", term: "Force majeure", field: "Finance", body: "French for ‘superior force’ — the contract clause that lets a company pause obligations when events beyond its control intervene. Oracle invoked it on the $165 billion Jupiter campus: the first contractual crack in AI’s build-at-any-cost era." },
     { id: "expl-geography", term: "Yanbu", field: "Geography", body: "Saudi Arabia’s Red Sea oil port, terminus of the East-West pipeline — the kingdom’s workaround for exporting crude without sailing through the Strait of Hormuz. Thursday’s reported strikes put the workaround itself on the map." },
     { id: "expl-history", term: "The midterm penalty", field: "History", body: "American history punishes the president’s party at the midterms — the out-of-power party is almost always the one gaining ground. Cook’s projected Democratic pickup of 5–15 House seats is that gravity, priced in." },
-    { id: "expl-language", term: "Kill switch", field: "Language", body: "Born with railways and engines — the button that cuts all power in an emergency. California now wants one for frontier AI: an independently tested off switch for a model that goes rogue." },
+    { id: "expl-language", term: "Kill switch", field: "Language", body: "Born with railways and engines — the button that cuts all power in an emergency. California now wants a killswitch for frontier AI: an independently tested off switch for a model that goes rogue." },
     { id: "expl-art", term: "The General Assembly hall", field: "Art", body: "The General Assembly hall was designed as theatre: the green-marble podium, the choreographed seating, the ever-present cameras. Walkouts, standing ovations, 37-minute speeches — it is diplomacy performed in a room built for drama." },
   ],
   culturalMoves: [
