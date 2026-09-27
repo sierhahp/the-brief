@@ -1,9 +1,16 @@
-export default function StoryCard({ story, note, onOpenNote }) {
+export default function StoryCard({ story, note, onOpenNote, comments, onAddComment, onOpenComment }) {
   return (
     <article className="story" id={story.id}>
       <div className="kicker sans">{story.kicker}</div>
       <h3>{story.title}</h3>
-      <p>{story.body}</p>
+      <p>
+        <SelectableText
+          text={story.body}
+          comments={comments}
+          onAddComment={onAddComment}
+          onComment={onOpenComment}
+        />
+      </p>
       <div className="why">{story.why}</div>
       {story.prediction && (
         <div className="prediction sans">

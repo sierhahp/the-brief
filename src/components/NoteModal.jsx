@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function NoteModal({ story, initialText, onSave, onDelete, onClose }) {
+export default function NoteModal({ story, quote, initialText, onSave, onDelete, onClose }) {
   const [text, setText] = useState(initialText || "");
 
   useEffect(() => {
@@ -26,6 +26,7 @@ export default function NoteModal({ story, initialText, onSave, onDelete, onClos
       >
         <div className="note-modal-kicker sans">{story.kicker}</div>
         <h3 className="note-modal-title">{story.title}</h3>
+        {quote && <blockquote className="note-quote">“{quote}”</blockquote>}
         <textarea
           className="note-textarea"
           value={text}

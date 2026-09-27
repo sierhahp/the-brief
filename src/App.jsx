@@ -8,6 +8,7 @@ import NoteModal from "./components/NoteModal";
 
 const THEME_KEY = "bdb-theme";
 const noteKey = (n) => `tbb-notes-issue-${n}`;
+const commentKey = (n) => `tbb-comments-issue-${n}`;
 
 function loadNotes(n) {
   try {
@@ -17,11 +18,21 @@ function loadNotes(n) {
   }
 }
 
+function loadComments(n) {
+  try {
+    return JSON.parse(localStorage.getItem(commentKey(n))) || {};
+  } catch {
+    return {};
+  }
+}
+
 export default function App() {
   const [issueNumber, setIssueNumber] = useState(editions[0].issueNumber);
   const [theme, setTheme] = useState(() => localStorage.getItem(THEME_KEY) || "light");
   const [notes, setNotes] = useState(() => loadNotes(editions[0].issueNumber));
+  const [comments, setComments] = useState(() => loadComments(editions[0].issueNumber));
   const [noteStoryId, setNoteStoryId] = useState(null);
+  const [commentDraft, setCommentDraft] = useState(null); // { storyId, quote, commentId?, initial }
 
   const edition = editions.find((e) => e.issueNumber === issueNumber) || editions[0];
 
@@ -36,12 +47,18 @@ export default function App() {
 
   useEffect(() => {
     setNotes(loadNotes(edition.issueNumber));
+    setComments(loadComments(edition.issueNumber));
     setNoteStoryId(null);
+    setCommentDraft(null);
   }, [edition.issueNumber]);
 
   useEffect(() => {
     localStorage.setItem(noteKey(edition.issueNumber), JSON.stringify(notes));
   }, [notes, edition.issueNumber]);
+
+  useEffect(() => {
+    localStorage.setItem(commentKey(edition.issueNumber), JSON.stringify(comments));
+  }, [comments, edition.issueNumber]);
 
   const saveNote = (id, text) => {
     const trimmed = text.trim();
@@ -61,6 +78,43 @@ export default function App() {
       return next;
     });
     setNoteStoryId(null);
+  };
+
+  const saveComment = ({ storyId, commentId, quote, text }) => {
+    const trimmed = text.trim();
+    setComments((prev) => {
+      const list = [...(prev[storyId] || [])];
+      if (commentId) {
+        const i = list.findIndex((c) => c.id === commentId);
+        if (i >= 0) {
+          if (trimmed) list[i] = { ...list[i], text: trimmed };
+          else list.splice(i, 1);
+        }
+      } else if (trimmed) {
+        list.push({
+          id: `c-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+          quote,
+          text: trimmed,
+          ts: Date.now(),
+        });
+      }
+      const next = { ...prev };
+      if (list.length) next[storyId] = list;
+      else delete next[storyId];
+      return next;
+    });
+    setCommentDraft(null);
+  };
+
+  const deleteComment = (storyId, commentId) => {
+    setComments((prev) => {
+      const list = (prev[storyId] || []).filter((c) => c.id !== commentId);
+      const next = { ...prev };
+      if (list.length) next[storyId] = list;
+      else delete next[storyId];
+      return next;
+    });
+    setCommentDraft(null);
   };
 
   const allStories =
@@ -116,7 +170,24 @@ export default function App() {
             <div className="section-label sans">Signals</div>
             <h2 className="section-title">AI, moving fast</h2>
             {edition.ai.map((s) => (
-              <StoryCard key={s.id} story={s} note={notes[s.id]} onOpenNote={() => setNoteStoryId(s.id)} />
+              <StoryCard
+                key={s.id}
+                story={s}
+                note={notes[s.id]}
+                onOpenNote={() => setNoteStoryId(s.id)}
+                comments={comments[s.id] || []}
+                onAddComment={(quote) =>
+                  setCommentDraft({ storyId: s.id, quote, initial: "" })
+                }
+                onOpenComment={(c) =>
+                  setCommentDraft({
+                    storyId: s.id,
+                    commentId: c.id,
+                    quote: c.quote,
+                    initial: c.text,
+                  })
+                }
+              />
             ))}
           </section>
 
@@ -124,7 +195,24 @@ export default function App() {
             <div className="section-label sans">Signals</div>
             <h2 className="section-title">The world, in motion</h2>
             {edition.world.map((s) => (
-              <StoryCard key={s.id} story={s} note={notes[s.id]} onOpenNote={() => setNoteStoryId(s.id)} />
+              <StoryCard
+                key={s.id}
+                story={s}
+                note={notes[s.id]}
+                onOpenNote={() => setNoteStoryId(s.id)}
+                comments={comments[s.id] || []}
+                onAddComment={(quote) =>
+                  setCommentDraft({ storyId: s.id, quote, initial: "" })
+                }
+                onOpenComment={(c) =>
+                  setCommentDraft({
+                    storyId: s.id,
+                    commentId: c.id,
+                    quote: c.quote,
+                    initial: c.text,
+                  })
+                }
+              />
             ))}
           </section>
 
@@ -186,24 +274,48 @@ export default function App() {
       {edition.kind === "regular" && (
         <NotesPanel
           notes={notes}
+          comments={comments}
           stories={allStories}
           issueNumber={edition.issueNumber}
-          onClear={() => setNotes({})}
+          onClear={() => {
+            setNotes({});
+            setComments({});
+          }}
         />
       )}
 
-      {noteStoryId && (() => {
-        const story = allStories.find((s) => s.id === noteStoryId);
-        return story ? (
-          <NoteModal
-            story={story}
-            initialText={notes[noteStoryId] || ""}
-            onSave={(text) => saveNote(noteStoryId, text)}
-            onDelete={() => deleteNote(noteStoryId)}
-            onClose={() => setNoteStoryId(null)}
-          />
-        ) : null;
-      })()}
+      {commentDraft &&
+        (() => {
+          const story = allStories.find((s) => s.id === commentDraft.storyId);
+          return story ? (
+            <NoteModal
+              story={story}
+              quote={commentDraft.quote}
+              initialText={commentDraft.initial || ""}
+              onSave={(text) => saveComment({ ...commentDraft, text })}
+              onDelete={
+                commentDraft.commentId
+                  ? () => deleteComment(commentDraft.storyId, commentDraft.commentId)
+                  : undefined
+              }
+              onClose={() => setCommentDraft(null)}
+            />
+          ) : null;
+        })()}
+
+      {noteStoryId &&
+        (() => {
+          const story = allStories.find((s) => s.id === noteStoryId);
+          return story ? (
+            <NoteModal
+              story={story}
+              initialText={notes[noteStoryId] || ""}
+              onSave={(text) => saveNote(noteStoryId, text)}
+              onDelete={() => deleteNote(noteStoryId)}
+              onClose={() => setNoteStoryId(null)}
+            />
+          ) : null;
+        })()}
     </div>
   );
 }
