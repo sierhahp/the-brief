@@ -1,0 +1,360 @@
+:root {
+  --paper: #faf8f2;
+  --ink: #1a1712;
+  --ink-soft: #4a443a;
+  --muted: #7a7264;
+  --rule: #d8d2c2;
+  --card: #ffffff;
+  --accent: #9a3412;
+  --accent-soft: #f5e6da;
+  --gold: #b45309;
+  --green: #166534;
+  --green-soft: #dcfce7;
+  --amber-soft: #fef3c7;
+  --red-soft: #fee2e2;
+  --red: #991b1b;
+}
+
+[data-theme="dark"] {
+  --paper: #141210;
+  --ink: #ece7db;
+  --ink-soft: #c9c2b4;
+  --muted: #8f887a;
+  --rule: #2e2a24;
+  --card: #1e1b17;
+  --accent: #e0784a;
+  --accent-soft: #3a2418;
+  --gold: #d99a3d;
+  --green: #4ade80;
+  --green-soft: #14301f;
+  --amber-soft: #3a2f14;
+  --red-soft: #3a1a1a;
+  --red: #f87171;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.25s, color 0.25s;
+}
+
+.sans, button, input, .kicker, .section-label, .confidence {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+}
+
+#root { min-height: 100vh; }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Masthead ---------- */
+.masthead {
+  border-bottom: 3px double var(--ink);
+  padding: 28px 0 18px;
+  text-align: center;
+  position: relative;
+}
+.masthead h1 {
+  font-size: clamp(2rem, 7vw, 3.2rem);
+  margin: 0;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+}
+.masthead .deck {
+  font-style: italic;
+  color: var(--muted);
+  margin: 6px 0 0;
+  font-size: 1.05rem;
+}
+.dateline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 8px 0;
+  margin-top: 16px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  padding: 6px 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Sections ---------- */
+.section { padding: 34px 0 8px; }
+.section-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+.section-title {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin: 0 0 18px;
+  font-weight: 700;
+}
+
+/* ---------- Story cards ---------- */
+.story {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+.kicker {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.story h3 { font-size: 1.35rem; margin: 8px 0 10px; line-height: 1.3; }
+.story p { margin: 0 0 12px; color: var(--ink-soft); font-size: 1.02rem; }
+.why {
+  border-left: 3px solid var(--accent);
+  padding-left: 14px;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+  font-size: 0.98rem;
+}
+.prediction {
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  margin: 0 0 14px;
+}
+.prediction strong { display: block; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 4px; }
+.confidence {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.confidence.high { background: var(--green-soft); color: var(--green); }
+.confidence.medium { background: var(--amber-soft); color: var(--gold); }
+.confidence.low { background: var(--red-soft); color: var(--red); }
+
+/* highlight buttons */
+.hl-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+.hl-btn {
+  border: 1px solid var(--rule);
+  background: none;
+  color: var(--ink-soft);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.hl-btn:hover { border-color: var(--accent); }
+.hl-btn.active-explain { background: var(--accent); border-color: var(--accent); color: #fff; }
+.hl-btn.active-interesting { background: var(--gold); border-color: var(--gold); color: #fff; }
+
+/* ---------- Explainers ---------- */
+.explainer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 640px) { .explainer-grid { grid-template-columns: 1fr 1fr; } }
+.explainer {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 18px;
+}
+.explainer .explainer-term {
+  font-size: 1.35rem; font-weight: 700; line-height: 1.25; margin: 0 0 2px;
+}
+.explainer .field {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em;
+  color: var(--accent); font-weight: 700;
+}
+.explainer p { margin: 8px 0 0; font-size: 1.25rem; line-height: 1.55; }
+
+/* ---------- Words in this issue (bridge before the game) ---------- */
+.words-bridge-note { color: var(--muted); font-size: 0.95rem; margin: 0 0 14px; }
+.words-bridge {
+  display: grid; grid-template-columns: 1fr; gap: 10px;
+}
+@media (min-width: 640px) { .words-bridge { grid-template-columns: 1fr 1fr; } }
+.word-row {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 12px 16px;
+}
+.word-row .word-term { font-weight: 700; font-size: 1.05rem; letter-spacing: 0.06em; }
+.word-row .word-def { font-style: italic; color: var(--muted); font-size: 0.95rem; margin-top: 2px; }
+
+/* ---------- Interactive letter bank ---------- */
+.guess-line {
+  min-height: 2.6em; font-size: 1.5rem; font-weight: 700; letter-spacing: 0.25em;
+  text-indent: 0.25em; margin: 16px 0 6px; color: var(--ink);
+  border-bottom: 2px solid var(--rule); padding-bottom: 10px;
+}
+.guess-hint { font-size: 1rem; font-weight: 400; letter-spacing: normal; text-indent: 0; color: var(--muted); }
+.letter-bank {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 12px;
+}
+.letter-tile {
+  width: 44px; height: 48px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--rule); background: var(--paper); color: var(--ink);
+  font-size: 1.25rem; font-weight: 700;
+  transition: transform 0.08s ease, background 0.08s ease;
+}
+.letter-tile:hover { background: var(--card); transform: translateY(-2px); }
+.letter-tile:active { transform: translateY(0); }
+.bank-count { font-size: 0.82rem; color: var(--muted); margin-top: 8px; }
+
+/* ---------- Capital moves ---------- */
+.moves { display: grid; grid-template-columns: 1fr; gap: 14px; }
+@media (min-width: 640px) { .moves { grid-template-columns: 1fr 1fr; } }
+.move-col h4 { margin: 0 0 12px; font-size: 1.1rem; }
+.move {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 16px 18px; margin-bottom: 12px;
+}
+.move .move-label {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--muted); font-weight: 600;
+}
+.move p { margin: 6px 0 0; font-size: 0.98rem; color: var(--ink-soft); }
+.move a { color: var(--accent); font-size: 0.9rem; }
+
+/* ---------- Scramble ---------- */
+.scramble-card {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 12px;
+  padding: 26px 22px; text-align: center; margin-bottom: 14px;
+}
+.scramble-letters {
+  font-size: clamp(1.4rem, 6vw, 2rem);
+  letter-spacing: 0.35em;
+  font-weight: 700;
+  margin: 14px 0;
+  text-indent: 0.35em;
+  word-break: break-all;
+}
+.scramble-input {
+  font-size: 1.1rem; padding: 10px 16px; border-radius: 8px;
+  border: 1px solid var(--rule); background: var(--paper); color: var(--ink);
+  width: 100%; max-width: 340px; text-align: center; text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.scramble-feedback { min-height: 1.6em; margin-top: 10px; font-size: 0.95rem; }
+.scramble-feedback.correct { color: var(--green); font-weight: 600; }
+.scramble-feedback.wrong { color: var(--red); }
+.scramble-definition { font-style: italic; color: var(--muted); font-size: 0.95rem; margin-top: 6px; }
+.scramble-progress { font-size: 0.82rem; color: var(--muted); margin-bottom: 4px; }
+.scramble-done { font-size: 1.15rem; padding: 20px 0; }
+.btn {
+  background: var(--ink); color: var(--paper); border: none; border-radius: 8px;
+  padding: 10px 22px; font-size: 0.95rem; cursor: pointer; margin-top: 10px;
+}
+.btn:hover { opacity: 0.85; }
+.btn-ghost {
+  background: none; color: var(--ink-soft); border: 1px solid var(--rule);
+  border-radius: 8px; padding: 8px 18px; font-size: 0.9rem; cursor: pointer; margin-top: 10px;
+}
+
+/* ---------- Highlights drawer ---------- */
+.hl-fab {
+  position: fixed; bottom: 22px; right: 22px;
+  background: var(--accent); color: #fff; border: none; border-radius: 999px;
+  padding: 14px 22px; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25); z-index: 50;
+}
+.hl-panel {
+  position: fixed; bottom: 0; right: 0; left: 0;
+  background: var(--card); border-top: 1px solid var(--rule);
+  max-height: 70vh; overflow-y: auto; z-index: 60;
+  padding: 22px 20px 34px; border-radius: 16px 16px 0 0;
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.2);
+}
+@media (min-width: 640px) {
+  .hl-panel { left: auto; width: 420px; bottom: 22px; right: 22px; border: 1px solid var(--rule); border-radius: 14px; max-height: 80vh; }
+}
+.hl-panel h3 { margin: 0 0 6px; }
+.hl-item { border-bottom: 1px solid var(--rule); padding: 12px 0; font-size: 0.95rem; }
+.hl-item .tag {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700;
+  padding: 2px 10px; border-radius: 999px; margin-right: 8px;
+}
+.hl-item .tag.explain { background: var(--accent-soft); color: var(--accent); }
+.hl-item .tag.interesting { background: var(--amber-soft); color: var(--gold); }
+.hl-empty { color: var(--muted); font-style: italic; }
+.hl-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 3px double var(--ink);
+  margin-top: 40px; padding: 26px 0 60px;
+  text-align: center; color: var(--muted); font-size: 0.95rem;
+}
+.footer .next { font-style: italic; margin-top: 8px; }
+
+/* ---------- Issue archive nav ---------- */
+.issue-nav {
+  display: flex; gap: 8px; overflow-x: auto;
+  padding: 14px 0 4px; margin-top: 6px;
+  -webkit-overflow-scrolling: touch;
+}
+.issue-tab {
+  flex: 0 0 auto;
+  border: 1px solid var(--rule); background: none; color: var(--ink-soft);
+  border-radius: 999px; padding: 8px 16px; font-size: 0.85rem; cursor: pointer;
+  white-space: nowrap;
+}
+.issue-tab:hover { border-color: var(--accent); color: var(--accent); }
+.issue-tab.active { background: var(--ink); border-color: var(--ink); color: var(--paper); font-weight: 600; }
+
+/* ---------- Quiz ---------- */
+.quiz-intro { color: var(--ink-soft); font-size: 1.02rem; margin: 0 0 20px; max-width: 36em; }
+.quiz-score {
+  font-size: 0.95rem; font-weight: 700; color: var(--ink);
+  background: var(--accent-soft); border-radius: 8px;
+  padding: 10px 16px; margin-bottom: 18px; display: inline-block;
+}
+.quiz-q {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 20px; margin-bottom: 14px;
+}
+.quiz-qnum {
+  font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em;
+  color: var(--muted); font-weight: 600; margin-bottom: 6px;
+}
+.quiz-prompt { font-size: 1.05rem; margin: 0 0 12px; line-height: 1.5; }
+.quiz-q .scramble-input { text-transform: none; letter-spacing: normal; text-align: left; }
+.quiz-q .btn { margin-top: 12px; }
+.quiz-final-note { color: var(--muted); font-size: 0.9rem; margin: -8px 0 18px; }
+
+/* ---------- Vocabulary review (after a final scramble attempt) ---------- */
+.vocab-review { margin-top: 14px; border-top: 1px solid var(--rule); }
+.vocab-row { padding: 12px 2px; border-bottom: 1px solid var(--rule); }
+.vocab-word { font-weight: 700; font-size: 1rem; letter-spacing: 0.04em; }
+.vocab-word.solved { color: var(--green); }
+.vocab-word.missed { color: var(--red); }
+.vocab-def { font-style: italic; color: var(--muted); font-size: 0.92rem; margin-top: 2px; }
