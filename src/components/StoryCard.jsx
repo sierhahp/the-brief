@@ -1,3 +1,5 @@
+import SelectableText from "./SelectableText";
+
 export default function StoryCard({ story, note, onOpenNote, comments, onAddComment, onOpenComment }) {
   return (
     <article className="story" id={story.id}>
