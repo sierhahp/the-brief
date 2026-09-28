@@ -2,6 +2,7 @@ import { issue1 } from "./issue1";
 import { issue2 } from "./issue2";
 import { issue3 } from "./issue3";
 import { issue4 } from "./issue4";
+import { issue5 } from "./issue5";
 
 // Latest first — the app opens on the newest issue, older ones one tap away.
-export const editions = [issue4, issue3, issue2, issue1];
+export const editions = [issue5, issue4, issue3, issue2, issue1];
