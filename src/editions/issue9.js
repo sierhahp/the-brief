@@ -1,0 +1,237 @@
+// Issue #9 — Monday, October 5, 2026 (regular)
+export const issue9 = {
+  id: "issue-9",
+  issueNumber: 9,
+  dateline: "Monday · October 5, 2026",
+  kind: "regular",
+  deck: "The new before the news.",
+  readingLevel: "Upper high school · approx. Grade 10",
+  nextLine: "Next edition arrives Wednesday.",
+  ai: [
+    {
+      id: "ai-sif",
+      kicker: "01 / Policy",
+      title: "Trump names his AI czar",
+      body: "On Sunday, President Trump announced via Truth Social that Director of National Intelligence Jay Clayton will lead the new 'Super Intelligence Force' — the federal government's coordinating body for AI, charged with assessing risks and opportunities, reviewing existing laws, and recommending the government's role, including defenses against AI-enabled cyberattacks. The group has 120 days to report. Vice chairs include FTC Chair Andrew Ferguson, OPM Director Scott Kupor, and defense research chief Emil Michael; former AI czar David Sacks and Condoleezza Rice advise from outside, per the Wall Street Journal. Clayton's line: 'The risk of not being first is high.' Existing consumer-protection and product-liability laws, he argues, are enough — no pause, no heavy regulation.",
+      why: "Washington's AI policy now has a boss — and his first message is that America won't regulate itself out of the lead.",
+      prediction:
+        "The 120-day clock runs to about February 2027, landing any recommendation as the 2028 race heats up. Until then, states and cities write the real rules — starting with today's hearing in New York.",
+      confidence: "high",
+    },
+    {
+      id: "ai-reflection",
+      kicker: "02 / Models",
+      title: "America's open-weight answer",
+      body: "Axios reported Sunday that Reflection AI — the startup founded by two ex-Google DeepMind researchers, backed by an $800 million Nvidia investment — will soon release its first open weights, positioning itself as the US answer to China's DeepSeek and Qwen on open leaderboards. No model name, license, or benchmarks are published yet; the expectation is that it trails top closed US models at first while competing with leading Chinese open models. The startup has lined up more than $7 billion in compute through 2029, including a $150-million-a-month deal for Nvidia-powered capacity at SpaceX's Colossus 2 and a $1-billion-plus agreement with Nebius. Its enterprise pitch: downloadable, customizable models — plus an 'AI factory' model, with a memorandum of understanding with South Korea's Shinsegae Group for a 250-megawatt facility.",
+      why: "The open-weight race is now geopolitics: whichever models developers build on set the defaults for the next decade.",
+      prediction:
+        "If the weights land this month, watch developer adoption — the first serious US open-weight challenger to DeepSeek. The test is the gap: developers tolerate trailing closed models only if the license and the price are right.",
+      confidence: "medium",
+    },
+    {
+      id: "ai-nyc",
+      kicker: "03 / Safety",
+      title: "Sworn in",
+      body: "Today, New York City's council convenes all 51 members for a rare Committee of the Whole hearing — and for the first time ever, major AI firms will testify under oath about AI safety. Anthropic, OpenAI, Google, and Meta are on the witness list: Meta agreed voluntarily; OpenAI, Google, and Anthropic only came around after subpoena threats; Elon Musk's SpaceXAI never responded and was formally subpoenaed on September 28. The trigger: tens of thousands of reported safety incidents and the rogue-agent disclosures that have filled these pages for weeks. On the table: independent outside validation of AI systems, human 'kill switches,' $25,000 penalties for missing or falsified validation, and 24-hour incident reporting on city contracts.",
+      why: "A city council just did what Congress hasn't: put the labs under oath.",
+      prediction:
+        "Whatever gets said under oath today becomes quotable ammunition for state legislators and plaintiff lawyers everywhere. Cities are writing the de facto rules while Washington watches.",
+      confidence: "high",
+    },
+    {
+      id: "ai-spv",
+      kicker: "04 / Money",
+      title: "The AI buildout gets financialized",
+      body: "The Financial Times reported Friday that Amazon wants to move roughly $8 billion of Nvidia chips — installed across more than a dozen US data centers — into an investor-funded special-purpose vehicle, take up to 10% of the equity, and lease the chips back: a sell-and-leaseback that keeps the hardware cost off its balance sheet while compute keeps expanding. It's a pattern, not a one-off: Big Tech is turning to Wall Street financial engineering to fund the buildout. Anthropic could pay SpaceX up to $84.5 billion through 2029 under its compute deal, per Reuters reporting on the IPO prospectus. The AI capex boom is entering its financialization phase.",
+      why: "Even the richest companies on earth are now renting their AI future from Wall Street — and keeping the assets off the books.",
+      prediction:
+        "Watch for more chip-lease SPVs and securitizations. When trillion-dollar balance sheets need off-balance-sheet help, financing is the constraint, not ambition.",
+      confidence: "medium",
+    },
+  ],
+  world: [
+    {
+      id: "world-brazil",
+      kicker: "01 / Brazil",
+      title: "Bolsonaro vs. Lula, the rematch",
+      body: "Brazil's October 4 first round delivered no outright winner, sending Senator Flávio Bolsonaro into a runoff with President Luiz Inácio Lula da Silva later this month. Datafolha's polling splits the country along faith lines: Bolsonaro leads among evangelicals 47% to 27%; Lula leads among Catholics 45% to 33%. What is at stake goes well beyond Brasília: US access to rare earths, Amazon deforestation policy, and how far Brazil tilts toward China. Markets were expected to jump on Bolsonaro's stronger-than-expected first round.",
+      why: "The most-watched emerging-market vote of the year — and a bellwether for Latin America's direction.",
+      prediction:
+        "The next three weeks price the evangelical turnout machine against Lula's Catholic base. A Bolsonaro win flips Brazil's rare-earths and China posture overnight; a Lula win entrenches the BRICS bet.",
+      confidence: "high",
+    },
+    {
+      id: "world-spain",
+      kicker: "02 / Spain",
+      title: "Spain votes on its rent",
+      body: "Spain's housing crisis just became an election. Prime Minister Pedro Sánchez called a snap election for November 29 — announced this morning — after Congress on Friday defeated two housing decrees: eviction protections and curbs on speculative home buying. Junts joined the PP and Vox to kill them. Tens of thousands protested last week; a camp in Madrid's Puerta del Sol has become the symbol of anger over rents, crystallized by the eviction of 87-year-old 'Maricarmen' after her rent rose from €500 to €2,650. Sánchez, in office since 2018, is gambling that the crisis that sank his parliamentary majority wins him a bigger one. Polls currently trail him — and the bookies' favorite is a PP+Vox coalition, which would put a far-right party in Spain's central government for the first time since Franco.",
+      why: "The rent crisis is now the campaign — and the far right could ride it into power.",
+      prediction:
+        "Europe's housing-affordability crisis is an election machine in real time now — the same dynamic is simmering in London, Paris, and Amsterdam. Watch whether 'make the obstruction the campaign' works.",
+      confidence: "high",
+    },
+    {
+      id: "world-latvia",
+      kicker: "03 / Baltics",
+      title: "Latvia votes for security",
+      body: "In Saturday's parliamentary election, Prime Minister Andris Kulbergs' centrist, pro-Ukraine United List won decisively — about 36.6% with most votes counted — ahead of populist Latvia First at 13.4%, pro-Russian Sovereign Power at 11.6%, and the nationalist National Alliance at 9.1%. The campaign was dominated by Russia-linked security fears: intelligence services allegedly funneling migrants to the border — thousands turned away, more than 11,000 pushed back this year — chartered migrant flights, drones diverting into Latvian airspace, and pre-election screening that removed polling staff over Russia and Belarus trips. Kulbergs still needs coalition partners, has ruled out Latvia First, and has pledged 5% of GDP for defense plus continued aid to Ukraine.",
+      why: "A frontline democracy just held an election under active hybrid attack — and the voters doubled down on the incumbent.",
+      prediction:
+        "The Baltics are the laboratory for how hybrid warfare moves elections — and this time the security hawk won big. Watch coalition talks: any role for Sovereign Power would be Moscow's consolation prize.",
+      confidence: "high",
+    },
+    {
+      id: "world-jobs",
+      kicker: "04 / Markets",
+      title: "The jobs report that cooled the Fed",
+      body: "September's US jobs report landed soft: 29,000 new payrolls against expectations of 80,000 to 100,000, with 60,000 in downward revisions to July and August — the economy has shed jobs in two of nine months this year. The market's read: Fed October-hike odds collapsed from 64% a week ago to 22%, and stocks rallied Monday with the Nikkei up 2%. Then came the bear call: Panmure Liberum forecast the S&P 500 falls to 5,000 by end-2027 — more than 35% below Friday's 7,722.72 close — warning the bull run could end sooner than thought with 10-year yields above 5.25%. Yardeni Research counters with a 7,900 year-end target. France's CAC lagged on fiscal worries; the euro sits at a 17-month low.",
+      why: "One number, two opposite stories — the most crowded trade in markets is the bet that yields don't matter.",
+      prediction:
+        "The market is now a tug-of-war: soft jobs say no more hikes, but 5%-plus yields eventually eat valuations. Q3 earnings season is the scheduled moment of truth — Panmure's call looks prophetic or foolish by then.",
+      confidence: "high",
+    },
+  ],
+  explainers: [
+    {
+      id: "expl-sif",
+      term: "Super Intelligence Force",
+      field: "Policy",
+      body: "Announced October 4 via Truth Social: a federal task force led by Director of National Intelligence Jay Clayton to coordinate the government's AI work — assessing risks and opportunities, reviewing existing laws, and recommending defenses against AI-enabled cyberattacks. It has 120 days to report. Clayton's doctrine: existing consumer-protection and product-liability laws suffice — no pause, no heavy regulation.",
+    },
+    {
+      id: "expl-oath",
+      term: "Testifying under oath",
+      field: "Politics",
+      body: "Giving evidence with legal penalties for lying. On October 5, New York City's council convenes all 51 members for the first-ever sworn testimony by major AI firms on AI safety — Meta agreed voluntarily; OpenAI, Google, and Anthropic came only after subpoena threats; Elon Musk's SpaceXAI was formally subpoenaed on September 28.",
+    },
+    {
+      id: "expl-openweight",
+      term: "Open-weight models",
+      field: "Technology",
+      body: "Models whose trained parameters — 'weights' — are released publicly, so anyone can download, inspect, and customize them, versus closed models accessible only through an API. Reflection AI, the Nvidia-backed startup of two ex-DeepMind researchers, reportedly will soon release its first open weights, positioned as the US answer to China's DeepSeek and Qwen.",
+    },
+    {
+      id: "expl-spv",
+      term: "Special-purpose vehicle (SPV)",
+      field: "Finance",
+      body: "A subsidiary created to carry out one specific financial transaction and isolate its risk. Amazon reportedly wants to move roughly $8 billion of Nvidia chips into an investor-funded SPV, take up to 10% of the equity, and lease the chips back — expanding AI compute while keeping the hardware cost off its balance sheet.",
+    },
+    {
+      id: "expl-runoff",
+      term: "Runoff election",
+      field: "Politics",
+      body: "A second-round vote held when no candidate wins outright in the first round. Brazil's October 4 vote sent Senator Flávio Bolsonaro into a runoff with President Lula later this month — with US rare-earths access, Amazon deforestation policy, and Brazil's China tilt on the ballot.",
+    },
+    {
+      id: "expl-snap",
+      term: "Snap election",
+      field: "Politics",
+      body: "An election called earlier than legally required. Spain's Pedro Sánchez called one for November 29 after Congress defeated his housing decrees — gambling that the crisis that sank his parliamentary majority wins him a bigger one. Polls favor a PP+Vox coalition, which would put the far right in Spain's central government for the first time since Franco.",
+    },
+    {
+      id: "expl-hybrid",
+      term: "Hybrid warfare",
+      field: "Defense",
+      body: "Using non-military tools — migration pressure, cyber operations, disinformation, drone incidents — to destabilize a rival. Latvia's October 3 election unfolded under Russian-linked hybrid tactics: migrants funneled to the border, drones in Latvian airspace, and polling-staff screenings. The security-hawk incumbent won decisively.",
+    },
+  ],
+  culturalMoves: [
+    {
+      id: "culture-read",
+      label: "Read · 4 min",
+      body: "TechCrunch on Trump's new Super Intelligence Force: Jay Clayton as AI czar, the 120-day clock, and a doctrine of no new regulation.",
+      url: "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
+      linkLabel: "Read the TechCrunch report",
+    },
+    {
+      id: "culture-watch",
+      label: "Read · 5 min",
+      body: "CNN on Spain's snap election: the housing decrees that failed, the eviction of 87-year-old 'Maricarmen' after her rent rose from €500 to €2,650, and the far-right's path to power.",
+      url: "https://www.cnn.com/2026/10/05/europe/spain-leader-calls-snap-election-intl-hnk?cid=external-feeds_iluminar_meta",
+      linkLabel: "Read the CNN report",
+    },
+    {
+      id: "culture-check",
+      label: "Read · 3 min",
+      body: "The NYC Council's own release on today's under-oath AI hearing — what was demanded, who resisted, and the penalties on the table.",
+      url: "https://council.nyc.gov/press/2026/09/28/3266/",
+      linkLabel: "Read the council release",
+    },
+    {
+      id: "culture-iter",
+      label: "For THE ĪTER",
+      body: "Brazil split along faith lines, Spain votes on its rent, Latvia voted with Russian drones overhead. Write about a decision you made out of fear: what it cost you, and whether the fear was right. 300 unedited words.",
+      url: null,
+      linkLabel: null,
+    },
+  ],
+  financialMoves: [
+    {
+      id: "finance-concept",
+      label: "One concept",
+      body: "A special-purpose vehicle (SPV) is a subsidiary built for one deal. Amazon reportedly wants to park roughly $8B of Nvidia chips in an investor-funded SPV, keep up to 10% of it, and lease the chips back — more compute, less balance sheet. When SPVs multiply, the buildout is being financed, not just built.",
+    },
+    {
+      id: "finance-week",
+      label: "This week",
+      body: "September payrolls: +29,000 vs ~90k expected, with 60k in downward revisions; October Fed-hike odds fell to 22%. The S&P closed Friday at 7,722.72. Panmure Liberum calls 5,000 by end-2027; Yardeni says 7,900 by year-end. The 10-year sits above 5.25% — the number both forecasts quietly depend on.",
+    },
+    {
+      id: "finance-watch",
+      label: "Watch",
+      body: "Brazil's runoff, later this month, is the emerging-market event of the year: rare-earths access, Amazon policy, and Brazil's China tilt on the ballot. Markets will price the evangelical-vs-Catholic turnout battle week by week.",
+    },
+  ],
+  words: [
+    {
+      id: "w1",
+      word: "CZAR",
+      scramble: "ZRCA",
+      definition: "The new AI czar — Trump's title for Jay Clayton, leading the Super Intelligence Force.",
+      explainerId: "expl-sif",
+    },
+    {
+      id: "w2",
+      word: "SUBPOENA",
+      scramble: "ANOPESUB",
+      definition: "A court order to appear or produce documents — what finally got the AI labs to New York.",
+      explainerId: "expl-oath",
+    },
+    {
+      id: "w3",
+      word: "WEIGHTS",
+      scramble: "GHSTIWE",
+      definition: "A model's trained parameters — released openly, anyone can download and customize them.",
+      explainerId: "expl-openweight",
+    },
+    {
+      id: "w4",
+      word: "RUNOFF",
+      scramble: "NUOFFR",
+      definition: "A second-round vote when nobody wins outright — Brazil heads there this month.",
+      explainerId: "expl-runoff",
+    },
+    {
+      id: "w5",
+      word: "SNAP",
+      scramble: "PNAS",
+      definition: "An election called earlier than required — Spain's is November 29.",
+      explainerId: "expl-snap",
+    },
+    {
+      id: "w6",
+      word: "HYBRID",
+      scramble: "YHIBDR",
+      definition: "Warfare by non-military means: migration pressure, drones, disinformation.",
+      explainerId: "expl-hybrid",
+    },
+    {
+      id: "w7",
+      word: "LEASEBACK",
+      scramble: "BCKLASEEA",
+      definition: "Sell an asset and immediately rent it back — Amazon's chip-financing trick.",
+      explainerId: "expl-spv",
+    },
+  ],
+  quizQuestions: [],
+};
