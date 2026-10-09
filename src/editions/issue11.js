@@ -1,0 +1,237 @@
+// Issue #11 — Friday, October 9, 2026 (regular)
+export const issue11 = {
+  id: "issue-11",
+  issueNumber: 11,
+  dateline: "Friday · October 9, 2026",
+  kind: "regular",
+  deck: "The new before the news.",
+  readingLevel: "Upper high school · approx. Grade 10",
+  nextLine: "Next edition arrives Saturday.",
+  ai: [
+    {
+      id: "ai-gpt6",
+      kicker: "01 / Models",
+      title: "GPT-6 turns answers into software",
+      body: "On Wednesday, OpenAI rolled out GPT-6 with a feature it calls 'Intelligent UI' — and by Thursday it reached the free tiers. Paid accounts (Plus, Pro, Business, Enterprise) get GPT-6 Sol; Free and Go users get GPT-6 Luna, a cheaper model tuned for everyday chat. Instead of a wall of text, answers can now include tappable buttons, interactive charts, editable graphs, maps, and tools built on the spot: recipe widgets that rescale with the guest count, bill splitters, savings calculators, even small games. OpenAI says the model starts rendering while still reasoning — answering 44% sooner on average than GPT-5.6 for web-search questions (internal testing). The company claims more than 1.2 billion people use ChatGPT each week, which makes this the largest interface change ever shipped overnight. One wrinkle: activating the 'Astra' extended-thinking mode disables Intelligent UI even on Pro, a trade-off OpenAI hasn't explained. The Work and Codex models are unchanged — for now.",
+      why: "The most-used AI product on Earth just stopped being a text box.",
+      prediction:
+        "Within six months, the 'chat window' dies as the default metaphor — when answers build tools on demand, every single-purpose app has to justify its own interface. Watch whether the unchanged Work and Codex models follow: enterprise is where this feature prints money.",
+      confidence: "high",
+    },
+    {
+      id: "ai-haiku",
+      kicker: "02 / Pricing",
+      title: "Anthropic slashes Haiku prices up to 90%",
+      body: "On the same day GPT-6 shipped, Anthropic fired the pricing gun: Claude Haiku 5.5 costs $0.10 per million input tokens and $0.50 per million output for requests under 100,000 tokens — roughly 75% below Haiku 4.5 on average and up to 90% cheaper on the common short-prompt band, matching GPT-6 Luna's price exactly. It's also the first Haiku with adjustable effort levels, a dial from Low to Max so a simple classification burns pennies while a hard reasoning task gets the full brain, and it carries a 1-million-token context window. Anthropic sweetened the deal by halving Sonnet 5.5 cache-read prices and issuing monthly API credits of $100 to $500 for Max and Team subscribers. The timing reads as strategy, not generosity: one analyst note cites SemiAnalysis's estimate that subscriptions drive about 10% of Anthropic's revenue while eating over 40% of its inference compute — so this is a market-share purchase ahead of the company's next act.",
+      why: "The cheapest frontier small model just got cheaper — the day GPT-6 launched.",
+      prediction:
+        "Small-model pricing is now the real frontier of the model wars. The cuts stick until the seller's economics demand otherwise — subsidized prices end on the seller's schedule, not yours. Re-price agent workloads against Haiku this week, but budget 2027 at last quarter's rates.",
+      confidence: "high",
+    },
+    {
+      id: "ai-gemini-agent",
+      kicker: "03 / Agents",
+      title: "Google's Gemini agent moves into the office",
+      body: "On Thursday, Google Cloud introduced the Gemini agent: a single AI agent for work that answers questions, handles tasks, creates content, and writes code. It lives inside Google Workspace — Gmail, Docs, Sheets, Calendar — and also works through Microsoft 365 and Slack. It plans the work, uses tools, connects to a company's business systems, and returns finished work as documents, emails, and code. Notably, it picks the best model for each task — currently running on Google's Gemini and Anthropic's Claude, with more to come. Companies can also create 'coworker agents' that act as team members, with their own email address and access only to the information they're given. Versions tailored for financial services and legal work are in preview now; government, healthcare, and retail editions are coming. The context: Reuters notes OpenAI launched always-on agents called 'dots' in September, and Meta released its 'Muse' personal agent last month. Every lab is converging on the same product: an agent that lives where the work lives.",
+      why: "The agent wars just entered Workspace — and it even runs on Claude.",
+      prediction:
+        "The winner of the agent race won't be the smartest model — it'll be the one with the deepest hooks into existing workflows. Coworker agents with their own email addresses will force the first real corporate AI-identity policies by spring: who is the employee of record when the coworker is code?",
+      confidence: "medium",
+    },
+    {
+      id: "ai-genesis",
+      kicker: "04 / Policy",
+      title: "Trump's $2.4B compute pledge — credits, not cash",
+      body: "At Thursday's White House 'Science: A New Golden Age' summit, President Trump announced $2.4 billion in pledges from eleven tech partners for the Genesis Mission, the federal effort to put AI to work on scientific research across 14-plus agencies in energy, health, and space. The breakdown: Nvidia pledged $1 billion — the largest, structured as compute capabilities over five years; AMD $500 million; OpenAI $200 million in token discounts and training programs; Anthropic and Google $150 million each (Anthropic's as Claude access over three years); AMP and Emerald AI $100 million each; AWS, Armada, Crusoe, and Micron $50 million each. Read the fine print: this is not cash. The pledges are compute credits, cloud and token credits, discounted model access, and engineering support delivered over several years — credits that cost the giver far less than face value. On the same stage, Trump doubled down on renaming AI 'super intelligence,' writing that the White House considers anyone who says 'artificial intelligence' instead of 'super intelligence' the enemy. Nvidia's Jensen Huang played along, calling his company's contribution 'advanced Super Intelligence' for America's scientists.",
+      why: "Washington's AI science push runs on cloud credits and a rebrand.",
+      prediction:
+        "The credits-versus-cash distinction decides whether this is a research program or a press release. $2.4 billion of face-value compute is a real tailwind for labs courting government contracts — but allocation rules don't exist yet, so no researcher should plan a grant around it. Watch who actually gets the credits.",
+      confidence: "medium",
+    },
+  ],
+  world: [
+    {
+      id: "world-fed",
+      kicker: "01 / Rates",
+      title: "The minutes say the Fed isn't done",
+      body: "Minutes of the Fed's September 15–16 meeting, released Wednesday, show a committee more hawkish than the market: most participants judged that another quarter-point increase 'would likely be appropriate by year end.' The September meeting itself voted 12–0 to raise the target range to 3.75–4.00% — the first increase since July 2023 — and 16 of 18 policymakers' dot-plot estimates see at least one more move this year. But the minutes offered no signal for October specifically, and futures markets now put the odds of an October hold at roughly 83% (up from about 80% before the release; pre-release October-hike odds sat near 17%). Chair Kevin Warsh's officials are reading the room: New York Fed chief John Williams sees 'no need for urgency,' and Vice Chair Philip Jefferson says policymakers should 'carefully review data trends.' One striking line buried in the minutes: some officials said the AI buildout itself could push demand above supply and lift inflation. Next decision: October 27–28, with the final meeting of the year December 8–9.",
+      why: "Most officials want one more hike this year — markets aren't so sure.",
+      prediction:
+        "The October 14 CPI print decides whether December becomes a live hike call. The committee is more hawkish than futures markets price; Goldman already calls December. One hot inflation reading and that gap closes fast.",
+      confidence: "high",
+    },
+    {
+      id: "world-bull",
+      kicker: "02 / Markets",
+      title: "Four years of the AI bull market",
+      body: "Reuters marks the AI-centered bull market's fourth anniversary this week: the run has gained 117%, the sixth-best since World War II, and AI is the entire story. S&P 500 earnings are expected to rise more than 35% this year, boosted by hyperscaler data-center spending; Oxford Economics estimates about one-third of recent US economic growth stems from AI, counting both the investment and the wealth effect of rising stocks. Of the market's eleven sectors, only technology and communication services have beaten the index over the run. Nvidia — $286 billion in October 2022 — now sits near $5.8 trillion, the world's largest company, and thirteen US companies are worth at least $1 trillion. But the rally is extraordinarily narrow: fewer than half of S&P 500 stocks closed above their 200-day average this week, and the equal-weighted index — every stock treated the same — has sunk to near a 23-year low against its cap-weighted sibling. The market-cap concentration this edition explains is the trade: tech is priced as immune to 5.3% yields, and everything else is priced as the economy.",
+      why: "117% in four years — and one-third of US growth now runs on AI.",
+      prediction:
+        "Year five of the bull market is priced on hyperscaler capex guidance, not earnings breadth. Q3 earnings season is the scheduled moment of truth — watch the capex numbers first. Concentration this narrow historically doesn't resolve sideways.",
+      confidence: "high",
+    },
+    {
+      id: "world-brazil",
+      kicker: "03 / Brazil",
+      title: "Bolsonaro lands the third-place endorsement",
+      body: "Flávio Bolsonaro keeps collecting the right. On Thursday he announced the endorsement of author-psychiatrist Augusto Cury — the third-place finisher with 2.89% of valid votes, who campaigned for the Avante party under the slogan 'Centered on what matters' and has avoided identifying with left or right. Cury follows Ronaldo Caiado's endorsement earlier this week; Renan Santos says he won't back either candidate. The first round finished 47.03% to 45.16% for Bolsonaro over Lula, and the October 25 runoff remains a dead heat. The campaign is now a fiscal argument: Folha de S.Paulo reported Bolsonaro's team is studying constitutional changes to save 250 billion reais — about $49.8 billion, roughly 2% of GDP — including scrapping the spending floors that tie health and education budgets to revenue growth. On Thursday Bolsonaro vowed pensions would keep rising above inflation: 'I won't balance the books on the backs of those who need it most.' His economic coordinator added there'd be no privatization of Petrobras or Banco do Brasil — the adjustment, he said, targets 'government excesses.' Meanwhile, any talk of fiscal austerity is being weighed against Lula's warning that social gains are at risk.",
+      why: "Cury's 2.89% could decide a dead-heat runoff — and the fiscal stakes are now explicit.",
+      prediction:
+        "Cury's 2.89% is the largest endorsable bloc left, and his 'centered' brand is exactly the voter type Lula needs. The polls understated Bolsonaro on Sunday; if they do it again, Brazil's fiscal future — 250 billion reais of austerity versus above-inflation pensions — gets decided on October 25.",
+      confidence: "high",
+    },
+    {
+      id: "world-ukraine",
+      kicker: "04 / Ukraine",
+      title: "The 'vile strikes' on Ukraine",
+      body: "Russia pounded Ukraine with waves of missiles and drones on Wednesday in what President Zelenskiy called one of its most 'vile strikes,' killing at least 28 people — including children — and damaging industrial facilities and energy infrastructure. The strike is the latest turn of the escalation spiral this edition has been tracking: Zelenskiy said on October 4 that Ukraine would double down on hitting Russian oil refineries, and Russia answered with intensified strikes on Kyiv and Odesa's ports. The Lowy Institute's analysis this week describes Moscow's strategy as maximum battlefield pressure plus intensified aerial attacks on cities and infrastructure plus hybrid pressure on European allies — a bet that exhaustion beats Ukraine. Winter is approaching with Kyiv's power grid battered. This is now openly the infrastructure war: refineries against power grids, decided by who runs out of capacity first.",
+      why: "28 dead, the grid battered, winter coming — the infrastructure war is now explicit.",
+      prediction:
+        "Winter sets the tempo from here. Watch Odesa's ports and Kyiv's grid week by week — and whether Ukraine's refinery campaign can impose costs faster than Russia's grid campaign imposes pain.",
+      confidence: "medium",
+    },
+  ],
+  explainers: [
+    {
+      id: "expl-token",
+      term: "Time-to-first-token (TTFT)",
+      field: "Technology",
+      body: "How fast a model starts answering — the gap between your question and the first word. OpenAI says GPT-6 begins responding 44% sooner than GPT-5.6 for web-search questions (its own internal testing), because it starts rendering the answer while still finishing its reasoning pass. It's speed you can feel — but note it measures the first token, not the whole answer.",
+    },
+    {
+      id: "expl-effort",
+      term: "Effort levels",
+      field: "Technology",
+      body: "A dial for how hard a model thinks. Claude Haiku 5.5 is the first of Anthropic's small models to offer adjustable effort — from Low to Max — so a routine classification burns pennies while a tricky reasoning task gets the full brain. The logic: pay for intelligence by the task, not the model.",
+    },
+    {
+      id: "expl-coworker",
+      term: "Coworker agents",
+      field: "Technology",
+      body: "AI agents that act as team members rather than tools you query. With Google's new Gemini agent, companies can create coworker agents that carry their own email address and can see only the information they're given. Not a chatbot you ask — a colleague you assign work to.",
+    },
+    {
+      id: "expl-credits",
+      term: "Compute credits",
+      field: "Technology",
+      body: "Cloud and model access handed out as currency. This week's $2.4 billion Genesis Mission pledges aren't cash — they're compute capacity, token discounts, and engineering support spread over years. Credits spend like money for the recipient and cost the giver far less than face value, which is exactly why companies love pledging them.",
+    },
+    {
+      id: "expl-hawk",
+      term: "Hawkish (vs. dovish)",
+      field: "Finance",
+      body: "Central-bank speak for leaning toward higher interest rates (the opposite is dovish). The Fed's October 7 minutes showed most officials think another hike is likely by year end — a hawkish bias — even though futures markets price only about 17% odds of an October move. Hawkish words, dovish bets.",
+    },
+    {
+      id: "expl-conc",
+      term: "Market-cap concentration",
+      field: "Finance",
+      body: "When a handful of giants carries the whole market. The S&P 500 keeps hitting records, but fewer than half its stocks sit above their 200-day moving average, and the equal-weighted index — which treats every stock the same — has fallen to near a 23-year low against the cap-weighted benchmark. A narrow rally carries wide risk.",
+    },
+    {
+      id: "expl-auster",
+      term: "Austerity (fiscal adjustment)",
+      field: "Economics",
+      body: "Balancing the books by shrinking the state's bills. Flávio Bolsonaro's team is reportedly studying 250 billion reais — about $49.8 billion, roughly 2% of Brazil's GDP — in savings: scrapping the constitutional floors that tie health and education spending to revenue growth and indexing them to inflation instead. His vow alongside it: pensions still rise above inflation.",
+    },
+  ],
+  culturalMoves: [
+    {
+      id: "culture-read",
+      label: "Read · 4 min",
+      body: "MacRumors on GPT-6's Intelligent UI — tappable buttons, interactive charts, recipe widgets that rescale with the guest count, and the 44%-faster first token.",
+      url: "https://www.macrumors.com/2026/10/07/chatgpt-intelligent-ui/",
+      linkLabel: "Read the MacRumors report",
+    },
+    {
+      id: "culture-spain",
+      label: "Read · 6 min",
+      body: "The Times on Spain's election as housing versus migration: two million new residents since 2020, one million new households, half a million new homes, prices up 26% in two years — and Vox at 18%, up from 12% in 2023.",
+      url: "https://www.thetimes.com/world/europe/article/housing-ceuta-spain-election-pedro-sanchez-lm6v9bw9l",
+      linkLabel: "Read the Times report",
+    },
+    {
+      id: "culture-bull",
+      label: "Read · 5 min",
+      body: "Reuters on the AI bull market's fourth birthday: up 117%, Nvidia from $286 billion to $5.8 trillion, thirteen trillion-dollar companies — and about a third of recent US growth attributed to AI.",
+      url: "https://www.reuters.com/legal/transactional/ai-centered-us-stock-bull-market-nears-four-year-anniversary-2026-10-09/",
+      linkLabel: "Read the Reuters report",
+    },
+    {
+      id: "culture-iter",
+      label: "For THE ĪTER",
+      body: "GPT-6 now turns answers into interfaces — tools built on demand inside the chat. Write about the last time a tool did more than you asked it to: when the assistant became the instrument. What did it build? Did you still recognize your own question? 300 unedited words.",
+      url: null,
+      linkLabel: null,
+    },
+  ],
+  financialMoves: [
+    {
+      id: "finance-concept",
+      label: "One concept",
+      body: "Everyone's paying in credits this week. Anthropic's Haiku 5.5 cut small-model prices up to 90% and handed Max and Team subscribers $100–$500 a month in API credits — which one analyst reads as a market-share purchase, a subsidy rather than a cost curve. Meanwhile the Wall Street Journal reports Lambda is raising up to $4 billion at a $14.5 billion pre-money valuation, led by Coatue and Blackstone, on a backlog that jumped from $15 billion to $50 billion in three months — most of it a single $35 billion Anthropic contract signed in August. The neocloud balance sheet is becoming a concentrated bet on two or three labs' ability to keep paying.",
+    },
+    {
+      id: "finance-week",
+      label: "This week",
+      body: "The S&P 500 closed above 7,800 for the first time on Tuesday; Nvidia inched toward becoming the first company ever to reach a $6 trillion market cap, with options markets pricing a meaningful chance by month's end. The 10-year Treasury yield eased to about 5.28% after touching a 24-year high. The Fed's October 7 minutes confirmed a hawkish bias — most officials expect one more hike by year end — while futures put an October hold at roughly 83%. The AI buildout itself now appears in the minutes as an inflation risk.",
+    },
+    {
+      id: "finance-watch",
+      label: "Watch",
+      body: "September CPI lands October 14 — the last big data point before the Fed's quiet period and the October 27–28 meeting; Goldman already calls December for the next hike. Q3 earnings season opens next week with AI capex guidance as the market's theme. And Brazil votes in its runoff on October 25, with a 250-billion-reais austerity plan on one side of the ballot.",
+    },
+  ],
+  words: [
+    {
+      id: "w1",
+      word: "TOKEN",
+      scramble: "NKETO",
+      definition: "The first word's arrival speed — GPT-6 is 44% quicker.",
+      explainerId: "expl-token",
+    },
+    {
+      id: "w2",
+      word: "EFFORT",
+      scramble: "FOTRFE",
+      definition: "How hard the model thinks — Haiku 5.5's Low-to-Max dial.",
+      explainerId: "expl-effort",
+    },
+    {
+      id: "w3",
+      word: "COWORKER",
+      scramble: "WROKCEOR",
+      definition: "AI colleagues with their own email — Google's new agents.",
+      explainerId: "expl-coworker",
+    },
+    {
+      id: "w4",
+      word: "CREDITS",
+      scramble: "DIESTCR",
+      definition: "Cloud access as currency — the Genesis pledges aren't cash.",
+      explainerId: "expl-credits",
+    },
+    {
+      id: "w5",
+      word: "HAWKISH",
+      scramble: "AWKHSHI",
+      definition: "Leaning toward higher rates — the Fed minutes' bias.",
+      explainerId: "expl-hawk",
+    },
+    {
+      id: "w6",
+      word: "CONCENTRATION",
+      scramble: "TNRTEOIANOCNC",
+      definition: "A few giants carrying the market — the S&P's narrow rally.",
+      explainerId: "expl-conc",
+    },
+    {
+      id: "w7",
+      word: "AUSTERITY",
+      scramble: "TUAEITRYS",
+      definition: "Shrinking the state's bills — Brazil's 250B-reais plan.",
+      explainerId: "expl-auster",
+    },
+  ],
+  quizQuestions: [],
+};

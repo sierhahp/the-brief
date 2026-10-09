@@ -1,4 +1,4 @@
-const CACHE = "brief-v8";
+const CACHE = "brief-v9";
 const CORE = [
   "/",
   "/index.html",
